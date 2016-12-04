@@ -65,6 +65,7 @@ include('index.php');
   <h3 class="display-3"><?php echo $title?></h3>
    <hr>
    <?php echo $div;?>
+   <p class = "errorDiv"><?php echo $divEror;?></p>
   
   
   <hr>
@@ -74,5 +75,8 @@ include('index.php');
   
 
   </div>
+  <?php 
+  include('footer.php');
+  ?>
 </body>
 </html>

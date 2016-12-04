@@ -19,39 +19,21 @@ foreach ($jsonLoop as $loop){
 		$ups = $loop['data']['ups'];
 		$author = $loop['data']['author'];
 		$comment_link = $loop['data']['permalink'];
+		$thumbnail = $loop['data']['thumbnail'];
+	
 	
 }
 	
-/*
-	$type=Array(1 => 'gifv', 2 => 'jpeg', 3 => 'png', 4 => 'gif'); //store all the image extension types in array
- //get image name here
-$ext = explode(".",$url); //explode and find value after dot
+	
 
-$url;
-	?> <video width="320" height="240" controls>
-  <source src="<?php echo $url;?>" type="video/mp4">
-  
-</video><?php
-	$path_parts = pathinfo($url);
-if($path_parts['extension'] = 'gifv') //check image extension not in the array $type
-{
-$clean = trim($url, 'gifv');
-var_dump($clean);
-	$path_parts = pathinfo($url);
-echo $path_parts['basename'], "\n";
-//http://stackoverflow.com/questions/5898851/php-stripping-the-extension-from-a-file-name-string  
-	?><html>
-<img  scr = "<?php echo $path_parts['dirname'];echo $path_parts['basename'];echo $path_parts['filename'];?>.gif" height="42" width="42">
-</html>
-<?php */
-// This will check if the url is an image 
 $headers = get_headers( $url );
 
 $image_exist = implode(',',$headers);
 if ($div = strpos($image_exist, 'image') !== false) 
 {
+	
    
-$div = '<img src="'.$url.'" class="img-fluid" alt="">';
+$div = '<img src="'.$url.'" class="img-fluid imgLink" alt="">';
 
 	 
   
@@ -64,16 +46,10 @@ elseif ($div = preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:
 
 $div = '<html><iframe class ="youtubeEmbed"  frameborder="0" allowfullscreen src='.$videoScr.'></iframe></'; 
     } 
-else {
-    	
-?>
+else 
 
-<html><a href = "<?php echo $url; ?>">We are having trouble displaying the content please click the link to be brought directly to the content.</a><?php echo $url; ?></p>
-  <?php echo $url?></html>
-
-
-<?php 
+$div = '<img id="imgLink" src="'.$url.'"  alt="">';
+$divEror = '<a class ="failedDisplay"  href='.$url.'>If you are having trouble seeing content please click this link to view the source</a>';
   //Opening it again to continue the else statement 
 		
-    }
-}//main if to check if user has entered input 
+    }//main if to check if user has entered input 
