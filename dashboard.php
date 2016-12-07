@@ -3,7 +3,8 @@
 
 //include nav bar from the nav.php file 
 include('nav.php');
-include('index.php');
+include('redditApi.php');
+
 
 
 
