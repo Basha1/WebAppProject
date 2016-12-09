@@ -4,6 +4,8 @@ include('recentAccounts.php');
 
 
 
+
+
 ?>
 
 		<div class="col-md-9">
@@ -37,49 +39,29 @@ include('recentAccounts.php');
     echo "0 results";
 }
 								
-								
-								
+							
 								?> 
 						</table>
 					</div>
 					<!--/panel-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon-precomposed" href="/media/angularjs-chat.png">
+    <link rel="shortcut icon" href="/media/angularjs-chat.png">
+
+   <script src="node_modules/angular-chat/node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-chat"></script>
+    <script src="node_modules/angular-chat/names.js"></script>
+    <script src="node_modules/angular-chat/app.js"></script>
 
 					<div class="panel panel-default">
 						<div class="panel-heading">Group Chat using Angeler.js</div>
 						<div class="panel-body">
 						<!-- ---------------------Chat---------------------------->
-						  <div class="form-control chat-container" ng-controller="BasicController as chat">
-
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <!-- Chat Messages -->
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <div class="chat-messages">
-            <div class="chat-header">
-                <div class="angularjs-chat-logo"></div>
-							
-            </div>
-            <div ng-repeat="message in chat.messages">
-                <div class="sent-message-{{ message.self }}">
-                    <span class="username">{{ message.user.name }}:</span>
-                    {{ message.data }}
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <!-- User Input -->
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <form ng-submit="chat.send()" class="chat-input">
-            <input type="text" ng-model="chat.textbox" autofocus>
-            <input type="submit" class="btn btn-primary send-icon" value=" ">
-            <input type="submit" value=" "
-                class="sent-indicator {{ chat.status }}">
-        </form>
-
-    </div>
-
+						<?php include('index.html');?>
 						
 						
 						
@@ -196,3 +178,7 @@ include('recentAccounts.php');
 	<!-- /.modal-dalog -->
 </div>
 <!-- /.modal -->
+<?php 
+include('footer.php');
+
+?>

@@ -22,7 +22,14 @@ $DBcon->close();
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
   <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
+                              <!-- ANGELR CHAT SOURCES -->
+   <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="apple-touch-icon-precomposed" href="/media/angularjs-chat.png">
+    <link rel="shortcut icon" href="/media/angularjs-chat.png">
+   <script src="angular-chat/node_modules/angular/angular.js"></script>
+    <script src="angular-chat/angular-chat.js"></script>
+    <script src="angular-chat/names.js"></script>
+    <script src="angular-chat/app.js"></script>
   </head>
 
   <body>
