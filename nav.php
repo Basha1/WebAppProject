@@ -63,7 +63,7 @@ $DBcon->close();
           <hr>
           <ul class="nav nav-pills nav-stacked">
             <li class="nav-header"></li>
-            <li class="active"><a href="http://bootply.com" title="The Bootstrap Playground" target="ext">Home</a></li>
+            <li class="active"><a href="http://webappproject-glennk010543446.codeanyapp.com/home.php" title="The Bootstrap Playground" target="ext">Home</a></li>
             <li><a href="Twitter.php">Twitter</a></li>
             <li class="divider"></li>
             <li><a href="/Reddit.php" title="Bootstrap 3 Panel">Reddit</a></li>
