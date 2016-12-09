@@ -1,0 +1,40 @@
+{
+  "name": "angular-chat",
+  "version": "1.0.9",
+  "description": "AngularJS Chat - Enable chat messaging experiences in your iOS, Android and Web apps.",
+  "main": "angular-chat.js",
+  "scripts": {
+    "test": "angular-chat-test.js"
+  },
+  "dependencies": {
+    "angular": ">= 1.4.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephenlb/angularjs-chat.git#master"
+  },
+  "keywords": [
+    "angularjs",
+    "chat",
+    "ios",
+    "android",
+    "messaging",
+    "angular"
+  ],
+  "author": {
+    "name": "Stephen Blum"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephenlb/angularjs-chat/issues"
+  },
+  "homepage": "http://angularjs.chat",
+  "readme": "# AngularJS Chat\n\n> [AngularJS Chat](http://angular.chat)\n\nEnable messaging experiences for Web, iOS and Android apps.\nComing Soon AngularJS and the best frameworks Ionic, PubNub, PhoneGap\n\n![AngularJS Chat Website](http://i.imgur.com/Nb6EzZB.png)\n\n## NPM Install\n\n```shell\nnpm install angular-chat\n```\n\n## Bower Install\n\n```shell\nbower install angular-chat\n```\n\n## PubNub API Keys\n\n> [Get PubNub API Keys](https://www.pubnub.com/get-started/?medium=sbng2016&source=sbng2016&campaign=sbng2016&keyword=sbangularjs&content=sbng2016)\nYou need **PubNub API Keys**.\nThis allows the chat communication on a data stream network.\nYou can fill in the `YOUR-PUBLISH-KEY`\nand `YOUR-SUBSCRIBE-KEY` placeholder strings with your\nAPI keys that you get on the PubNub website.\n\n## Basic Chat Demo\n\n```html\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<!-- includes -->\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<script src=\"bower_components/angular/angular.js\"></script>\n<script src=\"bower_components/angular-chat/angular-chat.js\"></script>\n\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<!-- configuration -->\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<script>\nangular.module('chat').constant( 'config', {\n    //\n    // Get your PubNub API Keys in the link above.\n    //\n    \"pubnub\": {\n        \"publish-key\"   : \"YOUR-PUBLISH-KEY\",\n        \"subscribe-key\" : \"YOUR-SUBSCRIBE-KEY\"\n    }\n} );\n</script>\n\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<!-- controller -->\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<script>\nvar chat = angular.module( 'BasicChat', ['chat'] );\nchat.controller( 'chat', [ 'Messages', '$scope', function( Messages, $scope ) {\n    // Message Inbox\n    $scope.messages = [];\n    // Receive Messages\n    Messages.receive(function(message){\n        $scope.messages.push(message);\n    });\n    // Send Messages\n    $scope.send = function() {\n        Messages.send({ data : $scope.textbox });\n    };\n} ] );\n</script>\n\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<!-- view -->\n<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->\n<div ng-app=\"BasicChat\">\n    <div ng-controller=\"chat\">\n        <div ng-repeat=\"message in messages\">\n            {{ message.user.name }}:\n            {{ message.data }}\n        </div>\n        <form ng-submit=\"send()\">\n            <input ng-model=\"textbox\">\n        </form>\n    </div>\n</div>\n```\n\n\n## AngularJS Chat Resources\n\n - [AngularJS Chat Website](http://angular.chat)\n - [AngularJS Chat Documentation](https://github.com/stephenlb/angularjs-chat/wiki/AngularJS-Chat-Module)\n - [AngularJS Chat GitHub](https://github.com/stephenlb/angularjs-chat)\n - [Twitter](https://twitter.com/stephenlb)\n - [Get PubNub API Keys](https://www.pubnub.com/get-started/?medium=sbng2016&source=sbng2016&campaign=sbng2016&keyword=sbangularjs&content=sbng2016)\n - [YouTube](https://www.youtube.com/c/StephenBlum)\n - [LinkedIn](https://www.linkedin.com/in/stephenlb)\n - [Vine](https://vine.co/Stephen.Blum)\n - [G+](https://plus.google.com/+StephenBlum)\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-chat@1.0.9",
+  "dist": {
+    "shasum": "b2bc8fd5dbc2e06f6f3433e65462e405815d1e90"
+  },
+  "_from": "angular-chat@",
+  "_resolved": "https://registry.npmjs.org/angular-chat/-/angular-chat-1.0.9.tgz"
+}

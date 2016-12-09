@@ -46,8 +46,49 @@ include('recentAccounts.php');
 
 
 					<div class="panel panel-default">
-						<div class="panel-heading">Stuff for here</div>
-						<div class="panel-body"><img src="http://www.wired.com/playbook/wp-content/uploads/2012/08/data-tracking-run-chart.jpg" class="img-responsive"></div>
+						<div class="panel-heading">Group Chat using Angeler.js</div>
+						<div class="panel-body">
+						<!-- ---------------------Chat---------------------------->
+						  <div class="form-control chat-container" ng-controller="BasicController as chat">
+
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!-- Chat Messages -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <div class="chat-messages">
+            <div class="chat-header">
+                <div class="angularjs-chat-logo"></div>
+							
+            </div>
+            <div ng-repeat="message in chat.messages">
+                <div class="sent-message-{{ message.self }}">
+                    <span class="username">{{ message.user.name }}:</span>
+                    {{ message.data }}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!-- User Input -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <form ng-submit="chat.send()" class="chat-input">
+            <input type="text" ng-model="chat.textbox" autofocus>
+            <input type="submit" class="btn btn-primary send-icon" value=" ">
+            <input type="submit" value=" "
+                class="sent-indicator {{ chat.status }}">
+        </form>
+
+    </div>
+
+						
+						
+						
+						
+						
+						
+						
+						
+						</div>
 					</div>
 					<!--/panel-->
 
