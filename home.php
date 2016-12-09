@@ -97,7 +97,7 @@ include('recentAccounts.php');
 					<div class="panel panel-default">
 						<div class="panel-heading">Who are we ?</div>
 						<div class="panel-body">
-							<p>bla bla bla </p>
+							<p>bunch of virgins </p>
 							<br><br>
 
 						</div>
