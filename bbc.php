@@ -2,6 +2,7 @@
 include('nav.php');
 include('bbc/bbcApicall.php');
 
+
 ?>
     
         <div class="col-md-9">
@@ -23,13 +24,13 @@ include('bbc/bbcApicall.php');
                 <div class="panel-heading">
                   <h2 class="Sub-Title">Top News Stroy: <h3 class = "center-text"><?php echo $title;?></h3></h2></div>
             
-                <?php// echo $div;?>
-                
+               <img class = "img-responsive" src= "http://webappproject-amysiggins10670911.codeanyapp.com/bbc/imgs/bbcImg.jpg">
+           
               
 
                 <hr>     
-                <a class="btn btn-primary btn-lg " href="<?php echo $url;?>" role="button">View Source</a>
-                <a class="btn btn-primary btn-lg" href="http://www.reddit.com<?php echo $comment_link;?>" role="button">View Comments</a>
+                <a class="btn btn-primary btn-lg center-block " href="<?php echo $url;?>" role="button">View Source</a>
+                
 
 
 
@@ -85,7 +86,7 @@ include('bbc/bbcApicall.php');
                 </div>
                 <div class="panel-body pull-center">
 
-                 <h3 class = "glyphicon glyphicon-user" ><?php echo $author;?></h3><hr>
+                 <h3 class = "glyphicon glyphicon-user" ></h3><hr>
                    <a class="btn btn-primary btn-lg" action = "savedLinks.php" role="button">Save link</a>
          
 

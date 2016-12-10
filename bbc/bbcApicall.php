@@ -17,7 +17,7 @@ foreach ($jsonLoop as $loop){
     
  
 }
-echo $urlToImage;
+
 /* 
 The call to get the image link we are using in the reddit API call would not work in this api call: 
 <-----------$div = '<img class="img-fluid imgLink" src="'.$url.'"  alt="">';------------------->
