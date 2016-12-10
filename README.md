@@ -1,7 +1,6 @@
-<snippet>
-  <content><![CDATA[
 
-# ${1:Web Project}
+
+#Web Project
 
 TODO: Web Application to pull from Api's and a messaging app
 
@@ -21,7 +20,7 @@ Table `tbl_users`
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;`
 ##ANGLER.JS 
-`sudo apt-get install npm`
+`sudo apt-get install npm` <br>
 `npm install angular-chat`
 
 
