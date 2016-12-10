@@ -55,10 +55,19 @@ if(isset($_POST['btn-signup'])) {
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
 <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+  <link rel="stylesheet" href="particleground/source/css/style.css" />
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <script type='text/javascript' src='particleground/jquery.particleground.js'></script>
+  <script type='text/javascript' src='particleground/source/js/particleConfig.js'></script>
+</head>
 
 </head>
 <body>
-
+  <div id="particles">
+  <div id="intro">
+    <h1 class  = "formText">Sign up form</h1>
 <div class="signin-form">
 
  <div class="container">
@@ -66,7 +75,7 @@ if(isset($_POST['btn-signup'])) {
         
        <form class="form-signin" method="post" id="register-form">
       
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
+  
         
         <?php
   if (isset($msg)) {
@@ -93,7 +102,7 @@ if(isset($_POST['btn-signup'])) {
             <button type="submit" class="btn btn-default" name="btn-signup">
       <span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
    </button> 
-            <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
+            <a href="index.php" class="btn btn-default">Log In Here</a>
         </div> 
       
       </form>
@@ -101,6 +110,8 @@ if(isset($_POST['btn-signup'])) {
     </div>
     
 </div>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -43,6 +43,7 @@ if (isset($_POST['btn-login'])) {
 
 <div id="particles">
   <div id="intro">
+    <h1 class  = "formText">Sign in here</h1>
    <div class="signin-form">
 
  <div class="container">
@@ -50,7 +51,7 @@ if (isset($_POST['btn-login'])) {
         
        <form class="form-signin" method="post" id="login-form">
       
-        <h2 class="form-signin-heading">Sign In.</h2><hr />
+     
         
        <?php
   if(isset($msg)){

@@ -138,6 +138,10 @@ form.chat-input input[type="submit"] {
     height: 42px;
     overflow: hidden;
 }
+.formText{
+  color: #aab1b2;
+  
+}
 
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
