@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
    
   }
 if($_POST == true) {
-$string_reddit = file_get_contents("https://www.reddit.com/r/$formvalue/.json?Count=1");
+$string_reddit = file_get_contents("https://www.reddit.com/r/$formvalue/.json?Limit=1");
 $json = json_decode($string_reddit, true);  
 $jsonLoop = $json['data']['children'];
 foreach ($jsonLoop as $loop){
