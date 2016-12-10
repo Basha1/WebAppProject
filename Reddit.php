@@ -140,3 +140,7 @@ include('redditApi.php');
       <!-- /.modal-dalog -->
     </div>
     <!-- /.modal -->
+<?php 
+include('footer.php');
+
+?>

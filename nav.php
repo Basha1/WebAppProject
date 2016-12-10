@@ -1,21 +1,24 @@
+<!--  This bit of php gets the users session and includes the file dbconnect-->
+
 <?php
 session_start();
 include_once 'dbconnect.php';
 if (!isset($_SESSION['userSession'])) {
  header("Location: index.php");
 }
-
+//setting a var to query and telling it to get the username from the database and setting the username to the session 
 $query = $DBcon->query("SELECT * FROM tbl_users WHERE user_id=".$_SESSION['userSession']);
 $userRow=$query->fetch_array();
 $DBcon->close();
 
 ?>
-
+<!--  Nav bar and scripts-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Welcome
     </title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
@@ -33,43 +36,42 @@ $DBcon->close();
   </head>
 
   <body>
-    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    	<span class="icon-toggle"></span>
-  	</button>
-        <a class="navbar-brand" href="home.php">Dashboard</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-
-          <li class="dropdown">
-            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-              <strong> <?php echo $userRow['username']; ?></strong> <span class="caret"></span></a>
-            <ul id="g-account-menu" class="dropdown-menu" role="menu">
-              <li><a href="#">My Profile</a></li>
-            </ul>
-          </li>
-
-          <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">Dashboard</a>
     </div>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="#"><strong> <?php echo $userRow['username']; ?></strong></a></li>
+        <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
 
+
+          
           <strong>Quick Links</strong>
           <hr>
           <ul class="nav nav-pills nav-stacked">
             <li class="nav-header"></li>
-            <li class="active"><a href="http://webappproject-glennk010543446.codeanyapp.com/home.php" title="The Bootstrap Playground" target="ext">Home</a></li>
-            <li><a href="Twitter.php">Twitter</a></li>
-            <li class="divider"></li>
-            <li><a href="/Reddit.php" title="Bootstrap 3 Panel">Reddit</a></li>
-            <li><a href="/61521" title="Bootstrap 3 Icons">BBC Nws</a></li>
-            <li><a href="/61523" title="Bootstrap 3 ListGroup">List Groups</a></li>
-            <li><a href="#">GitHub</a></li>
+            <li class="active"><a href="/home.php">Home</a></li>
+            <li class="active" ><a href="/Twitter.php" >Twitter</a></li>
+            <li class="active"><a  href="/Reddit.php" >Reddit</a></li>
+            <li class="active"><a  href="/bbc.php" >BBC Nws</a></li>
+            <li class="active"><a href="https://github.com/Basha1/WebAppProject/" target="ext">GitHub</a></li>
+            
 
           </ul>
         </div>

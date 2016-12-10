@@ -158,13 +158,10 @@ $twitter = new TwitterOAuth($consumer,$consumersecret,$accestoken, $accestokense
       <div id= "main-con">
    
            </div>
-<footer>
-  <div class="Footer">
-  <p>
-    &copy; 2015 | <a href="https://github.com/Basha1">M.Basha</a> 
-    </p> 
-  </div>
-</footer>
     </div>
   </body>
+<?php 
+include('footer.php');
+
+?>
 </html>

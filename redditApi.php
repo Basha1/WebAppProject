@@ -1,5 +1,14 @@
 <?php
-
+ $title = '';
+    $url = '';
+		$num_comments = '';
+		$ups = '';
+		$author = '';
+		$comment_link = '';
+		$thumbnail = '';
+		$formvalue ='';
+		$div ='';
+		$divEror='';
 if (isset($_POST['submit']))
   {
   // Execute this code if the submit button is pressed.
@@ -29,7 +38,7 @@ if ($div = strpos($image_exist, 'image') !== false)
 {
 	
    
-$div = '<img src="'.$url.'" class="img-fluid imgLink" alt="">';
+$div = '<img class="img-fluid imgLink" src="'.$url.'"  alt="">';
 	 
   
 }
