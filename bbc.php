@@ -1,7 +1,15 @@
 <?php
 include('nav.php');
 include('bbc/bbcApicall.php');
-
+   
+    $ch = curl_init($urlToImage);
+$fp = fopen('bbc/imgs/bbcImg.jpg', 'wb');
+curl_setopt($ch, CURLOPT_FILE, $fp);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_exec($ch);
+curl_close($ch);
+fclose($fp);
 
 ?>
     
@@ -86,7 +94,7 @@ include('bbc/bbcApicall.php');
                 </div>
                 <div class="panel-body pull-center">
 
-                 <h3 class = "glyphicon glyphicon-user" ></h3><hr>
+                 <h3 class = "glyphicon glyphicon-user" ><?php echo $author;?></h3><hr>
                    <a class="btn btn-primary btn-lg" action = "savedLinks.php" role="button">Save link</a>
          
 

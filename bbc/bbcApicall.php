@@ -14,7 +14,14 @@ foreach ($jsonLoop as $loop){
     $author = $loop['author'];
 
    
-    
+    $ch = curl_init($urlToImage);
+$fp = fopen('imgs/bbcImg.jpg', 'wb');
+curl_setopt($ch, CURLOPT_FILE, $fp);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_exec($ch);
+curl_close($ch);
+fclose($fp);
  
 }
 
@@ -32,13 +39,6 @@ we are downloading the image and displaying it from our server insted of using t
 --------------------------------------REMINDER------------------------------------------------------
 set imgs folder permishions to 777
 */ 
-$ch = curl_init($urlToImage);
-$fp = fopen('imgs/bbcImg.jpg', 'wb');
-curl_setopt($ch, CURLOPT_FILE, $fp);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_exec($ch);
-curl_close($ch);
-fclose($fp);
+
 
 ?>
