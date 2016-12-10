@@ -26,3 +26,6 @@ ANGLER.JS
 https://github.com/Basha1
 https://github.com/jackbourkemckenna
 https://github.com/glennkennedy
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
