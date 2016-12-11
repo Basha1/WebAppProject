@@ -1,7 +1,7 @@
 <?php
 include('nav.php');
 include('bbc/bbcApicall.php');
-include('savedLinks.php');
+
    
     $ch = curl_init($urlToImage);
 $fp = fopen('bbc/imgs/bbcImg.jpg', 'wb');
@@ -24,14 +24,14 @@ $domainUrl = $_SERVER['SERVER_NAME'];
         <div class="col-md-9">
           <!-- Right -->
 
-          <strong><span class="glyphicon glyphicon-dashboard"></span>News Stroy</strong>
+          <strong><span class="glyphicon glyphicon-dashboard"></span>News Story</strong>
 
 
           <hr>
 
           <div class="row">
             <div class="col-md-6">
-              <div class="well">Saved Links <span class="badge pull-right">Echo saved links</span></div>
+              <div class="well">Latest link saved by users <span class="pull-right jsonLink"><a href= "data.json">view saved link in json file</a></span></div>
 
 
 
@@ -114,12 +114,35 @@ $domainUrl = $_SERVER['SERVER_NAME'];
               <?php
                   
                       
-
+/* 
+Save image button
+Will save the url to a json file
+set file permishions to 777
+*/ 
+                      //used this thread to help me with the json arrays http://stackoverflow.com/questions/6739871/how-to-create-an-array-for-json-using-php
 if (isset($_POST['submit']))
   {
   $savedUrl = $url; 
-    file_put_contents('filename.json', json_encode($savedUrl));
+    
+    $json = file_get_contents('data.json');
+    $json_data = json_decode($json,true);
+ 
+ $newar = [
+  
+    [
+        "user" => $userRow['username'],
+        "link" => $savedUrl
+        
+    ]
+];
 
+
+//saving data in Players object...
+
+
+$json = json_encode($newar);
+
+file_put_contents('data.json', $json);
 
    
   }

@@ -90,8 +90,34 @@ include('redditApi.php');
                  <h3 class = "glyphicon glyphicon-user" ><?php echo $author;?></h3><hr>
                   <h3 class = "glyphicon glyphicon-comment" ><?php echo $num_comments;?></h3><hr>
                   <h3 class = "glyphicon glyphicon-thumbs-up" ><?php echo $ups;?></h3><hr>
-                   <a class="btn btn-primary btn-lg" action = "savedLinks.php" role="button">Save link</a>
-         
+                 <input type="submit" class="btn btn-primary" name="submit" onClick="clearform()" id=""> Save the link
+                        </input>
+           <?php       
+         if (isset($_POST['submit']))
+  {
+  $savedUrl = $url; 
+    
+    $json = file_get_contents('data.json');
+    $json_data = json_decode($json,true);
+   
+ $newar = [
+   [
+   "Ruser"=> 'd',
+   "Rlink"=> 'hi'
+ ]
+];
+
+
+//saving data in Players object...
+
+
+$json = json_encode($newar);
+
+file_put_contents('data.json', $json);
+
+   
+  }
+                      ?>
 
                  
 

@@ -28,7 +28,7 @@ if (isset($_POST['btn-login'])) {
   <meta charset="UTF-8" />
   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coding Cage - Login & Registration System</title>
+
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
 <link rel="stylesheet" href="style.css" type="text/css" />

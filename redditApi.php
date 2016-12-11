@@ -47,7 +47,8 @@ elseif ($div = preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:
     $video_id = $match[1];
 // I used this thread as help  http://stackoverflow.com/questions/2936467/parse-youtube-video-id-using-preg-match for help "' . ${myOb->content} . '"
 	$videoScr = "http://www.youtube.com/embed/$video_id";
-$div = '<html><iframe class ="youtubeEmbed"  frameborder="0" allowfullscreen src='.$videoScr.'></iframe></'; 
+$div = '<html><iframe class ="youtubeEmbed"  frameborder="0" allowfullscreen src='.$videoScr.'></iframe></';
+	
     } 
 else 
 $div = '<img id="imgLink" src="'.$url.'"  alt="">';

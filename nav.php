@@ -14,6 +14,8 @@ $DBcon->close();
 ?>
 <!--  Nav bar and scripts-->
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Welcome
     </title>
@@ -69,7 +71,7 @@ $DBcon->close();
             <li class="active"><a href="/home.php">Home</a></li>
             <li class="active" ><a href="/Twitter.php" >Twitter</a></li>
             <li class="active"><a  href="/Reddit.php" >Reddit</a></li>
-            <li class="active"><a  href="/bbc.php" >BBC Nws</a></li>
+            <li class="active"><a  href="/bbc.php" >BBC News</a></li>
             <li class="active"><a href="https://github.com/Basha1/WebAppProject/" target="ext">GitHub</a></li>
             
 
