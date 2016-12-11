@@ -152,9 +152,6 @@ include('recentAccounts.php');
 			<!--/row-->
 		</div>
 		<!--/col-span-9-->
-	</div>
-</div>
-<!-- Main -->
 
 
 

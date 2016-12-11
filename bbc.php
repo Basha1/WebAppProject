@@ -12,6 +12,13 @@ curl_exec($ch);
 curl_close($ch);
 fclose($fp);
 
+/* getting the current url so when we are outputting the url we are not stuck to a static url eg: if we change domain name the link will 
+stay updated
+*/
+$domainUrl = $_SERVER['SERVER_NAME'];
+
+
+
 ?>
     
         <div class="col-md-9">
@@ -33,7 +40,7 @@ fclose($fp);
                 <div class="panel-heading">
                   <h2 class="Sub-Title">Top News Stroy: <h3 class = "center-text"><?php echo $title;?></h3></h2></div>
             
-               <img class = "img-responsive" src= "http://webappproject-amysiggins10670911.codeanyapp.com/bbc/imgs/bbcImg.jpg">
+               <img class = "img-responsive" src= "http://<?php echo $domainUrl;?>/bbc/imgs/bbcImg.jpg">
            
               
 
@@ -101,7 +108,7 @@ fclose($fp);
                     <div class="control-group">
                       <label></label>
                       <div class="controls">
-                        <input type="submit" class="btn btn-primary" name="submit" onClick="clearform()" id=""> Post
+                        <input type="submit" class="btn btn-primary" name="submit" onClick="clearform()" id=""> Save the link
                         </input>
          
 
