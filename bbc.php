@@ -1,6 +1,7 @@
 <?php
 include('nav.php');
 include('bbc/bbcApicall.php');
+include('savedLinks.php');
    
     $ch = curl_init($urlToImage);
 $fp = fopen('bbc/imgs/bbcImg.jpg', 'wb');
@@ -95,21 +96,20 @@ fclose($fp);
                 <div class="panel-body pull-center">
 
                  <h3 class = "glyphicon glyphicon-user" ><?php echo $author;?></h3><hr>
-                   <a class="btn btn-primary btn-lg" action = "savedLinks.php" role="button">Save link</a>
+                   <form class="form form-vertical" action="savedLinks.php" method="POST">
+
+                    <div class="control-group">
+                      <label></label>
+                      <div class="controls">
+                        <input type="submit" class="btn btn-primary" name="submit" onClick="clearform()" id=""> Post
+                        </input>
          
 
                  
 
                 </div>
               </div>
-              <!--/panel-->
-
-
-              <i class="icon-bar-chart icon-3x"></i>
-              <i class="icon-plus icon-3x"></i>
-              <i class="icon-facebook icon-3x"></i>
-              <i class="icon-beaker icon-3x"></i>
-              <i class="icon-twitter icon-3x"></i>
+              
 
 
             </div>
@@ -125,26 +125,7 @@ fclose($fp);
 
 
 
-    <div class="modal" id="addWidgetModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Add Widget</h4>
-          </div>
-          <div class="modal-body">
-            <p>Add a widget stuff here..</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn" data-dismiss="modal">Close</a>
-            <a href="#" class="btn btn-primary">Save changes</a>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dalog -->
-    </div>
-    <!-- /.modal -->
+    
 <?php 
 include('footer.php');
 
