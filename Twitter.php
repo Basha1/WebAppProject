@@ -13,14 +13,14 @@ $twitter = new TwitterOAuth($consumer,$consumersecret,$accestoken, $accestokense
 <div class="col-md-9">
           <!-- Right -->
 
-          <strong><span class="glyphicon glyphicon-dashboard"></span> Reddit Search</strong>
+          <strong><span class="glyphicon glyphicon-dashboard"></span> Twitter Search</strong>
 
 
           <hr>
 
           <div class="row">
             <div class="col-md-6">
-              <div class="well">Saved Links <span class="badge pull-right">Echo saved links</span></div>
+                <div class="well">Latest link saved by users <span class="pull-right jsonLink"><a href= "data.json">view saved link in json file</a></span></div>
 
                  <!-- output from RedditApi.php-->
               <div class="panel panel-default">
@@ -99,7 +99,7 @@ $twitter = new TwitterOAuth($consumer,$consumersecret,$accestoken, $accestokense
                  <h3 class = "glyphicon glyphicon-user" ><?php// echo $author;?></h3><hr>
                   <h3 class = "glyphicon glyphicon-comment" ><?php //echo $num_comments;?></h3><hr>
                   <h3 class = "glyphicon glyphicon-thumbs-up" ><?php //echo $ups;?></h3><hr>
-                   <a class="btn btn-primary btn-lg" action = "savedLinks.php" role="button">Save link</a>
+
          
 
                  
@@ -149,17 +149,7 @@ $twitter = new TwitterOAuth($consumer,$consumersecret,$accestoken, $accestokense
       <!-- /.modal-dalog -->
     </div>
     <!-- /.modal -->
-    <form action="" method="post">
-      <label>Search:<input type="text" name="keyword"/></label>
-    </form>
-              </div>
-    
    
-      <div id= "main-con">
-   
-           </div>
-    </div>
-  </body>
 <?php 
 include('footer.php');
 

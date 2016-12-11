@@ -47,7 +47,7 @@ $DBcon->close();
         <span class="icon-bar"></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <a class="navbar-brand" href="#">Dashboard</a>
+      <a class="navbar-brand" href="index.php">Dashboard</a>
     </div>
 
     <div class="collapse navbar-collapse" id="navigation">

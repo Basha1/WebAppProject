@@ -19,7 +19,7 @@ $domainUrl = $_SERVER['SERVER_NAME'];
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="well">Saved Links <span class="badge pull-right">Echo saved links</span></div>
+					   <div class="well">Latest link saved by users <span class="pull-right jsonLink"><a href= "data.json">view saved link in json file</a></span></div>
 
 
 
@@ -129,8 +129,8 @@ if (mysqli_num_rows($result) > 0) {
 					
 <div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title">User Emails<p>
-								<a href  = "http://<?php echo $domainUrl;?>/emails.json" >click me to see the json data of usernames and emails</a>
+							<div class="panel-title">Recent Emails made<p>
+								<a href  = "http://<?php echo $domainUrl;?>/emailJson.php" >click me to see the json data of usernames and emails</a>
 								</p></div>
 						</div>
 						<div class="panel-body pull-center">
