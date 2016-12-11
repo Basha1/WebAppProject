@@ -103,7 +103,7 @@ $domainUrl = $_SERVER['SERVER_NAME'];
                 <div class="panel-body pull-center">
 
                  <h3 class = "glyphicon glyphicon-user" ><?php echo $author;?></h3><hr>
-                   <form class="form form-vertical" action="savedLinks.php" method="POST">
+                   <form class="form form-vertical" action="" method="POST">
 
                     <div class="control-group">
                       <label></label>
@@ -111,7 +111,19 @@ $domainUrl = $_SERVER['SERVER_NAME'];
                         <input type="submit" class="btn btn-primary" name="submit" onClick="clearform()" id=""> Save the link
                         </input>
          
+              <?php
+                  
+                      
 
+if (isset($_POST['submit']))
+  {
+  $savedUrl = $url; 
+    file_put_contents('filename.json', json_encode($savedUrl));
+
+
+   
+  }
+                      ?>
                  
 
                 </div>

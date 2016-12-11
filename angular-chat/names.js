@@ -1,7 +1,7 @@
 'use strict';
 
 // Return a Silly Name
-function sillyname() {
+function name() {
     // Basic Random
 return "Anonymous"
 }

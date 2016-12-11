@@ -30,7 +30,7 @@ basicChat.controller( 'BasicController', [ 'Messages', function( Messages ) {
     chat.messages = [];
 
     // Set User Data
-    Messages.user({ name : sillyname() });
+    Messages.user({ name : name() });
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // Get Received Messages and Add it to Messages Array.
