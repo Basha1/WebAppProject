@@ -1,8 +1,9 @@
 <?php 
 include('nav.php');
 include('recentAccounts.php');
+include('emailAccounts.php');
 
-
+$domainUrl = $_SERVER['SERVER_NAME'];
 
 
 
@@ -29,7 +30,7 @@ include('recentAccounts.php');
 							<thead>
 								<?php
 								//calling from recentAccounts.php  to display the latest accounts made 
-								if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
 								?><p><?php echo $row["username"]." ";?></p><?php
@@ -43,6 +44,10 @@ include('recentAccounts.php');
 								?> 
 						</table>
 					</div>
+
+
+						
+			 
 					<!--/panel-->
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -121,42 +126,42 @@ include('recentAccounts.php');
 					</div>
 					<!--/panel-->
 
-					<div class="panel panel-default">
+					
+<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title">Engagement</div>
+							<div class="panel-title">User Emails<p>
+								<a href  = "http://<?php echo $domainUrl;?>/emails.json" >click me to see the json data of usernames and emails</a>
+								</p></div>
 						</div>
 						<div class="panel-body pull-center">
 
-							<img src="http://placehold.it/90X90/CC2222/FFF" class="img-circle">
-
-							<img src="http://placehold.it/90X90/11CC22/FFF" class="img-circle">
-
-							<img src="http://placehold.it/90X90/EEEEEE/222" class="img-circle">
+							<?php
+							if (mysqli_num_rows($result1) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result1)) {
+								?><p><?php echo $row["email"]." ";?></p><?php
+      
+    }
+} else {
+    echo "0 results";
+}
+							?>
 
 						</div>
 					</div>
-					<!--/panel-->
-
-
-					<i class="icon-bar-chart icon-3x"></i>
-					<i class="icon-plus icon-3x"></i>
-					<i class="icon-facebook icon-3x"></i>
-					<i class="icon-beaker icon-3x"></i>
-					<i class="icon-twitter icon-3x"></i>
-
 
 				</div>
 				<!--/col-span-6-->
 
+
 			</div>
 			<!--/row-->
+			<?php 
+include('footer.php');
+
+?>
 		</div>
 		<!--/col-span-9-->
 
 
 
-<!-- /.modal -->
-<?php 
-include('footer.php');
-
-?>
